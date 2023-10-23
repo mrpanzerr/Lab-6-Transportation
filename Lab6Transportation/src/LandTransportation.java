@@ -17,16 +17,20 @@ public class LandTransportation extends Transportation {
     public LandTransportation(String name, double cost, boolean purchaseType,
                               int averageSpeed, int numOfPassengers, String departure,
                               String color, int wheels, String infrastructure, String steer) {
+        // From Transportation
         super(name, cost, purchaseType, averageSpeed, numOfPassengers, departure, color);
+
         this.wheels = wheels; this.infrastructure = infrastructure; this.steer = steer;
     }
 
     // No Argument Constructor
     public LandTransportation() {
+        // From Transportation
         this.setName("Taxi"); this.setCost(29.99); this.setPurchaseType(true);
         this.setAverageSpeed(55); this.setNumOfPassengers(2); this.setDeparture("12AM");
-        this.setColor("Yellow"); this.wheels = 4; this.infrastructure = "Road";
-        this.steer = "Wheel";
+        this.setColor("Yellow");
+
+        this.wheels = 4; this.infrastructure = "Road"; this.steer = "Wheel";
     }
 
     // Accessor Methods
@@ -38,17 +42,18 @@ public class LandTransportation extends Transportation {
     public void setWheels(int wheels) {this.wheels = wheels;}
     public void setInfrastructure(String infrastructure) {this.infrastructure = infrastructure;}
     public void setSteer(String steer) {this.steer = steer;}
+    
     /**
      * display ALL information about the selected mode using an
      * overridden toString method
      * @return a string
      */
     @Override
+    // From Transportation
     public String toString() {
         return super.toString() + String.format("%21s: %s\n%21s: %d\n%21s: %s\n",
                 "Infrastructure", getInfrastructure(),
                 "Number of Wheels", getWheels(),
                 "Steering Method", getSteer());
-
     }
 }
