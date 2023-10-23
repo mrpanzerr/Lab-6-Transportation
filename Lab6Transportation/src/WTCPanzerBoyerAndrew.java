@@ -129,7 +129,7 @@ public class WTCPanzerBoyerAndrew {
         // Display the total cost.
         double totalTickets = passengers * members[index].getCost();
         if (members[index].getPurchaseType()) {
-            System.out.println("Your total comes to " + totalTickets);
+            System.out.printf("Your total comes to %.2f\n", totalTickets);
         }
         else {
             System.out.println("Your total cost comes to " + members[index].getCost());
