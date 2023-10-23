@@ -51,7 +51,7 @@ public class Transportation {
      * rental, the average speed, and the number of passengers allowed
      */
     public void displayOptions() {
-        System.out.printf("%-20s%-20s%-15.2f%-18d%-20d\n\n", getName(), getPurchaseType() ? "Ticket" : "Rental", getCost(),
+        System.out.printf("%-20s%-20s%-15.2f%-18d%-20d\n", getName(), getPurchaseType() ? "Ticket" : "Rental", getCost(),
                 getAverageSpeed(), getNumOfPassengers());
     }
 
@@ -70,5 +70,13 @@ public class Transportation {
                 "Maximum Passengers", getNumOfPassengers(),
                 "Departure Time", getDeparture(),
                 "Color", getColor());
+    }
+
+    /**
+     * display travel instructions
+     * @return null
+     */
+    public String travelInstructions() {
+        return null;
     }
 }
