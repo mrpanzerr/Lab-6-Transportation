@@ -1,7 +1,7 @@
 // Import Scanner
 import java.util.Scanner;
 
-public class WTCPanzerBoyerAndrew {
+public class WTCPanzerBoyerHorstkamp {
 
     public static void displayAirTransportation(Transportation [] members) {
 
