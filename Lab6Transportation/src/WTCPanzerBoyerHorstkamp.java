@@ -86,10 +86,12 @@ public class WTCPanzerBoyerAndrew {
     }
 
     /**
-     * Verify that the passengers needed to not exceed the maximum passengers
+     * Verify that the passengers needed to not exceed the maximum passengers 
+     * and ensure a positive, non-zero response. 
      * @param index: the index of the Transportation object choice
      * @param passengers: the number of passengers desired
      * @param members: an array of Transportation objects
+     * return passengers: an int object representing the number of passenegrs
      */
     public static int getFinalChoice(int index, int passengers, Transportation [] members) {
         Scanner input = new Scanner(System.in);
