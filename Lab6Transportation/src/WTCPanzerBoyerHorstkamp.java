@@ -29,7 +29,7 @@ public class WTCPanzerBoyerAndrew {
      */
     public static int getChoice() {
         // Show and ask for the desired Transportation method
-        System.out.println(""" 
+        System.out.print(""" 
                         Which mode of land transportation would you like?
                         0 for Train, 1 for Automobile, 2 for Bike, 3 for Bus
                         """);
@@ -61,7 +61,7 @@ public class WTCPanzerBoyerAndrew {
             bool = input.nextLine();
         }
     }
-    
+
     /**
      * Ask the user what mode of transportation they want, display all information about mode
      * and verify their answer
@@ -91,9 +91,13 @@ public class WTCPanzerBoyerAndrew {
      * @param passengers: the number of passengers desired
      * @param members: an array of Transportation objects
      */
-    public static void getFinalChoice(int index, int passengers, Transportation [] members) {
+    public static int getFinalChoice(int index, int passengers, Transportation [] members) {
+        Scanner input = new Scanner(System.in);
+        while(passengers < 1) {
+            System.out.print("Passengers must be 1 or more: ");
+            passengers = input.nextInt();
+        }
         while(passengers > members[index].getNumOfPassengers()) {
-            Scanner input = new Scanner(System.in);
             System.out.println("Unfortunately the passengers requested exceeds the maximum number of " +
                     members[index].getNumOfPassengers() + "\nPlease select a new mode of transportation");
             displayLandTransportation(members);
@@ -105,6 +109,7 @@ public class WTCPanzerBoyerAndrew {
             System.out.println("How many passengers are travelling?");
             passengers = input.nextInt();
         }
+        return passengers;
     }
 
     /**
@@ -124,7 +129,7 @@ public class WTCPanzerBoyerAndrew {
         System.out.println("How many passengers are travelling?");
         int passengers = input.nextInt();
 
-        getFinalChoice(index, passengers, members);
+        passengers = getFinalChoice(index, passengers, members);
 
         // Display the total cost.
         double totalTickets = passengers * members[index].getCost();
@@ -179,4 +184,5 @@ public class WTCPanzerBoyerAndrew {
         }
     }
 }
+
 
